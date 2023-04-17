@@ -1,0 +1,15 @@
+<mat-toolbar class="toolbarNav">
+    <span>
+      <mat-button-toggle-group #group="matButtonToggleGroup">
+        <mat-button-toggle value="browser" aria-label="Text align left" (click)="changeView('browser')">
+          <mat-icon>format_align_left</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle value="split" aria-label="Text align center" checked="true" (click)="changeView('split')">
+          <mat-icon>format_align_center</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle value="explorer" aria-label="Text align right" (click)="changeView('explorer')">
+          <mat-icon>format_align_right</mat-icon>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </span>
+  </mat-toolbar>
