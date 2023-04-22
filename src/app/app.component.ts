@@ -25,14 +25,10 @@ export class AppComponent {
       case "explorer": {
         this.browserWidth = "0%";
         this.explorerWidth = "100%";
-        this.browserDisplay = "none";
-        this.explorerDisplay = "inline-block";
       } break;
       case "browser": {
         this.browserWidth = "100%";
         this.explorerWidth = "0%";
-        this.browserDisplay = "inline-block";
-        this.explorerDisplay = "none";
       } break;
     }
   }

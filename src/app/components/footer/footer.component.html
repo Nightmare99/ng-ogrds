@@ -1,4 +1,13 @@
+<mat-menu #mainMenu="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="browsers">Browsers</button>
+</mat-menu>
+
+<mat-menu #browsers="matMenu">
+  <button mat-menu-item (click)="load('ICBrowser')">IC OWB</button>
+  <button mat-menu-item (click)="load('TEST')">TEST</button>
+</mat-menu>
 <mat-toolbar class="toolbarNav">
+    <button mat-raised-button [matMenuTriggerFor]="mainMenu"><mat-icon>menu</mat-icon>Start</button>
     <span>
       <mat-button-toggle-group #group="matButtonToggleGroup">
         <mat-button-toggle value="browser" aria-label="Text align left" (click)="changeView('browser')">

@@ -9,11 +9,11 @@ import { ExplorerViewComponent } from './layout/explorer-view/explorer-view.comp
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 import { FooterComponent } from './components/footer/footer.component';
-import { Browser1Component } from './projects/Project1/browser1/browser1.component'
 import { BrowserDirective } from './directives/browser.directive';
-import { FakeICBrowserComponent } from './projects/Project1/fake-icbrowser/fake-icbrowser.component';
 
 
 @NgModule({
@@ -22,9 +22,7 @@ import { FakeICBrowserComponent } from './projects/Project1/fake-icbrowser/fake-
     BrowserViewComponent,
     ExplorerViewComponent,
     FooterComponent,
-    Browser1Component,
-    BrowserDirective,
-    FakeICBrowserComponent
+    BrowserDirective
   ],
   imports: [
     BrowserModule,
@@ -33,7 +31,9 @@ import { FakeICBrowserComponent } from './projects/Project1/fake-icbrowser/fake-
     MatToolbarModule,
     MatButtonToggleModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    MatMenuModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

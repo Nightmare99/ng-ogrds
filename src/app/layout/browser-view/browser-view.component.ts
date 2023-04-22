@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { BrowserDirective } from 'src/app/directives/browser.directive';
-import { ProjectsRegistry } from 'src/app/projects/projects.registry';
+import { LayoutLoaderService } from '../layout-loader.service';
 
 @Component({
   selector: 'browser-view',
@@ -11,11 +11,15 @@ export class BrowserViewComponent {
 
   @ViewChild(BrowserDirective, {static: true}) browser!: BrowserDirective;
 
+  constructor (private layoutLoader: LayoutLoaderService) {
+    this.layoutLoader.cmpLoadEventHandler.subscribe((cmpName: string) => {
+      this.loadBrowserComponent(cmpName);
+    });
+  }
+
   loadBrowserComponent(componentName: string) {
     const viewContainerRef = this.browser.viewContainerRef;
-    viewContainerRef.clear();
-    let comp: any = ProjectsRegistry.get(componentName);
-    viewContainerRef.createComponent(comp);
+    this.layoutLoader.loadComponent(componentName, viewContainerRef);
   }
 
 }
