@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LayoutLoaderService } from 'src/app/layout/layout-loader.service';
 
 export interface PeriodicElement {
   name: string;
@@ -29,5 +30,11 @@ export class FakeICBrowserComponent {
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
+
+  constructor (private layoutLoader: LayoutLoaderService) { }
+
+  onClickRow(row: any): void {
+    this.layoutLoader.loadExplorerEvent.emit({ cmp: "Explorer1", data: row });
+  }
 
 }

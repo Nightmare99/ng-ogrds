@@ -17,7 +17,7 @@ export class FooterComponent {
   }
 
   load(compName: string) {
-    this.layoutLoader.cmpLoadEventHandler.emit(compName);
+    this.layoutLoader.loadBrowserEvent.emit(compName);
   }
 
 }

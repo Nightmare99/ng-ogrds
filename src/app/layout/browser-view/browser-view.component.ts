@@ -12,7 +12,7 @@ export class BrowserViewComponent {
   @ViewChild(BrowserDirective, {static: true}) browser!: BrowserDirective;
 
   constructor (private layoutLoader: LayoutLoaderService) {
-    this.layoutLoader.cmpLoadEventHandler.subscribe((cmpName: string) => {
+    this.layoutLoader.loadBrowserEvent.subscribe((cmpName: string) => {
       this.loadBrowserComponent(cmpName);
     });
   }

@@ -14,6 +14,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { FooterComponent } from './components/footer/footer.component';
 import { BrowserDirective } from './directives/browser.directive';
+import { ExplorerDirective } from './directives/explorer.directive';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { BrowserDirective } from './directives/browser.directive';
     BrowserViewComponent,
     ExplorerViewComponent,
     FooterComponent,
-    BrowserDirective
+    BrowserDirective,
+    ExplorerDirective
   ],
   imports: [
     BrowserModule,
